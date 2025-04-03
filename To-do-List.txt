@@ -1,0 +1,40 @@
+tasks=[]
+
+
+while True:
+    print("\nTo Do List")
+    print("1. Add Tasks!")
+    print("2.Remove Tasks!")
+    print("3. View Tasks!")
+    print("4. Exit!")
+
+    choice=input("📝Enter your number📝: ")
+
+    if choice =="1":
+        task=input("📜Enter your task📜: ")
+        tasks.append(task)
+        print("Task Added!🎯")
+
+    elif choice =="2":
+        task=input("✖️Enter your task to remove✖️: ")
+        if task in tasks:
+            tasks.remove(task)
+            print("✂️Task Removed!✂️")
+        else:
+            print("⁉️task not found!⁉️")
+
+    elif choice =="3":
+        print("\n😎Your tasks!😎")
+        if tasks:
+            for index, task in enumerate(tasks,start=1):
+                print(f"{index}.{task}")
+
+        else:
+            print("⁉️No tasks added yet.⁉️")
+        
+
+    elif choice =="4":
+        print("🚫Stopped🚫")
+        break
+    else:
+        print("📍Please enter a valid number, Try again...📍")
